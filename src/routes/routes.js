@@ -2,6 +2,7 @@ const express = require('express');
 const LojaController = require('../controllers/lojaController');
 const LojaController2 = require('../controllers/userController');
 const router = express.Router();
+const app = express();
 var cors = require('cors');
 
 // use it before all route definitions
