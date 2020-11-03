@@ -4,11 +4,12 @@ const status = require('http-status');
 const sequelize = require('./src/database/database');
 const app = express();
 const routes = require('./src/routes/routes.js');
-const cors = require('cors');
+var cors = require('cors');
+
+// use it before all route definitions
+app.use(cors({origin: 'http://localhost:8888'}));
  
 app.use(express.json());
- 
-app.use(cors());
  
 app.use('/laloja', routes);
  
@@ -27,21 +28,3 @@ sequelize.sync({ force: false }).then(() => {
     server.listen(process.env.PORT || port);
 });
 
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
