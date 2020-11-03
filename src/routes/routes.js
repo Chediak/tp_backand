@@ -2,6 +2,10 @@ const express = require('express');
 const LojaController = require('../controllers/lojaController');
 const LojaController2 = require('../controllers/userController');
 const router = express.Router();
+var cors = require('cors');
+
+// use it before all route definitions
+app.use(cors({origin: 'http://localhost:8888'}));
 
 //products
 router.post('/products', LojaController.Insert);

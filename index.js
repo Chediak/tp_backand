@@ -4,12 +4,11 @@ const status = require('http-status');
 const sequelize = require('./src/database/database');
 const app = express();
 const routes = require('./src/routes/routes.js');
-var cors = require('cors');
-
-// use it before all route definitions
-app.use(cors({origin: 'http://localhost:8888'}));
+const cors = require('cors');
  
 app.use(express.json());
+ 
+app.use(cors());
  
 app.use('/laloja', routes);
  
