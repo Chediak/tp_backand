@@ -1,8 +1,21 @@
 {
-  "name": "backendloja",
+  "name": "projetouser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgarSantiago/tp_backand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdgarSantiago/tp_backand.git"
+  },
+  "homepage": "https://github.com/EdgarSantiago/tp_backand.git",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -10,12 +23,5 @@
     "http-status": "^1.4.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
