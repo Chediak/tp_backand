@@ -30,4 +30,4 @@ msql.createConnection(
     }
 )
 
-module.exports = sequelize;
+module.exports = msql;
