@@ -1,7 +1,6 @@
-require('dotenv/config');
- 
-// Define a string de conexão com o banco de dados
-module.exports = {
+const msql = require("mysql");
+
+msql.createConnection({
     development: {
         database: {
             host: process.env.DB_HOST,
@@ -22,4 +21,5 @@ module.exports = {
             password: process.env.DB_PASSWORD
         }
     }
-}
+
+})
