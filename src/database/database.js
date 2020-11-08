@@ -1,10 +1,11 @@
 const Sequelize = require ('sequelize');
+const msql = require ("mysql");
 
 const environment = process.env.NODE_ENV || 'development';
 
 const config = require ('../config/config.js') [environment];
 
-const sequelize = new Sequelize (
+msql.createConnection(
     config.database.name,
     config.database.user,
     config.database.password,
@@ -12,6 +13,6 @@ const sequelize = new Sequelize (
         host: config.database.host,
         dialect: config.database.dialect
     }
-);
+)
 
 module.exports = sequelize;
