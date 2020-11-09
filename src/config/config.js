@@ -1,5 +1,4 @@
 require('dotenv/config');
- 
 // Define a string de conexão com o banco de dados
 module.exports = {
     development: {
